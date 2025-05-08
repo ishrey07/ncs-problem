@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NCS | Tech Society of JSSATEN</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: white;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      overflow-y: scroll;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 20px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: #00ffe7;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #00ffe7, 0 0 20px #00ffe7;
+      }
+      to {
+        text-shadow: 0 0 20px #00ffe7, 0 0 40px #00ffe7;
+      }
+    }
+
+    .tagline {
+      margin-top: 10px;
+      font-size: 3rem;
+      color: #3c3c3c;
+    }
+
+    .image {
+      position: sticky;
+      top: 20px;
+      width: 100.8%;
+      max-width: 400px;
+      margin: 20px auto;
+      display: block;
+      z-index: 1;
+      border: 2px solid #00ffe7;
+      border-radius: 10px;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .card:hover {
+      transform:none;
+      box-shadow: 0 0 20px #00ffe7;
+    }
+
+    .card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #dddddd;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    .buton {
+      background-color: #00ffe7;
+      color: black;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+    }
+
+    .why-join, .testimonials, .contact-us {
+      padding: 40px 20px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      margin: 20px auto;
+      max-width: 1200px;
+    }
+
+    .why-join h2, .testimonials h2, .contact-us h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #00ffe7;
+    }
+
+    .reasons {
+      display: flex;
+      justify-content: space-around;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .reason {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 20px;
+      width: 30%;
+      min-width: 250px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .reason:hover {
+      transform: scale(1.05);
+    }
+
+    .testimonial {
+      margin: 20px auto;
+      max-width: 800px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .testimonial p:first-child {
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+
+    .contact-us ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .contact-us ul li {
+      margin: 10px 0;
+      font-size: 1.1rem;
+    }
+
+    .contact-us ul li a {
+      color: #00ffe7;
+      text-decoration: none;
+    }
+
+    .contact-us ul li a:hover {
+      text-decoration: underline;
+    }
+
+    /* Navbar Styles */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: rgba(0, 0, 0, 0.8);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #00ffe7;
+    }
+
+    .navbar .menu {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar .menu li {
+      display: inline;
+    }
+
+    .navbar .menu li a {
+      text-decoration: none;
+      color: white;
+      font-size: 1rem;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .navbar .menu li a:hover {
+      background-color: #00ffe7;
+      color: black;
+    }
+
+    .menu.what li {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1000;
+      opacity: 0.9;
+    }
+
+    .menu.what li a {
+      background-color: rgba(255, 0, 0, 0.8); 
+      color: white;
+      padding: 20px;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+      transition: all 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">NCS</div>
+      <ul class="menu">
+        <li><a href="#main-heading">Home</a></li>
+        <li><a href="#why-join">Why Join Us</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact-us">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+  <header>
+    <h1 id="main-heading">NCS</h1>
+    <p class="tagline">Tech Society of JSS Academy of Technical Education, Noida</p>
+  </header>
+  <img src="https://via.placeholder.com/400x300.png?text=Tech+Society" alt="Tech Image" class="image">
+
+  <section class="container">
+    <div class="card">
+      <h3>Workshops</h3>
+      <p>Hands-on sessions in AI, Web Dev, Cybersecurity, and more!</p>
+    </div>
+    <div class="card">
+      <h3>Hackathons</h3>
+      <p>Showcase your skills and compete with the best minds.</p>
+    </div>
+    <div class="card">
+      <h3>Tech Talks</h3>
+      <p>Learn from industry leaders and alumni shaping the future.</p>
+    </div>
+    <div class="card">
+      <h3>Projects</h3>
+      <p>Build real-world applications and contribute to open source.</p>
+    </div>
+    <div class="card">
+      <h3>Meetups</h3>
+      <p>Engage with like-minded tech enthusiasts and mentors.</p>
+    </div>
+    <div class="card">
+      <h3>Competitions</h3>
+      <p>Win prizes and gain recognition through coding contests.</p>
+    </div>
+    <div class="cad">
+      <h3>Collaboration</h3>
+      <p>Team up with peers to create impactful solutions.</p>
+    </div>
+    <div class="card">
+      <h3>Learning Resources</h3>
+      <p>Access curated materials and mentorship for growth.</p>
+    </div>
+  </section>
+
+  <section class="why-join">
+    <h2>Why Join NCS?</h2>
+    <div class="reasons">
+        <div class="reason">
+            <h3>Networking</h3>
+            <p>Connect with industry professionals, alumni, and peers to expand your network.</p>
+        </div>
+        <div class="reason">
+            <h3>Skill Development</h3>
+            <p>Learn cutting-edge technologies and enhance your technical and soft skills.</p>
+        </div>
+        <div class="reason">
+            <h3>Career Opportunities</h3>
+            <p>Get access to internships, job opportunities, and career guidance.</p>
+        </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <h2>What Our Members Say</h2>
+    <div class="testimonial">
+        <p>"Joining NCS was the best decision of my college life. The workshops and hackathons helped me land my dream job!"</p>
+        <p>- Rohan Sharma, Alumni</p>
+    </div>
+    <div class="testimonial">
+        <p>"The mentorship and resources provided by NCS are unparalleled. I’ve grown so much as a developer."</p>
+        <p>- Priya Singh, Member</p>
+    </div>
+  </section>
+
+  <section class="contact-us">
+    <h2>Contact Us</h2>
+    <p>Have questions or want to join? Reach out to us!</p>
+    <ul>
+        <li>Email: <a href="mailto:ncs@jssaten.ac.in">ncs@jssaten.ac.in</a></li>
+        <li>Phone: +91-9876543210</li>
+        <li>Address: JSS Academy of Technical Education, Noida</li>
+    </ul>
+  </section>
+
+  <div style="text-align:center; margin: 30px;">
+    <button class="buton" onclick="changeHeading()">Click Me</button>
+  </div>
+
+  <footer>
+    © 2025 NCS | Made with 💻 and ☕ by JSSATEN Students
+  </footer>
+
+  <script>
+    function changeHeading() {
+      const heading = document.getElementById("main-head"); 
+      if (heading) {
+        heading.innerText = "Welcome to NCS Society!";
+      } else {
+        console.error("Heading element not found");
+      }
+    }
+    window.addEventListener('wheel', function(e) {
+      e.preventDefault();
+      window.scrollBy(0, -e.deltaY);
+    }, { passive: false });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const menu = document.querySelector('.menu');
+      const menuLinks = document.querySelectorAll('.menu li a');
+
+      menuLinks.forEach(link => {
+        link.addEventListener('click', function () {
+          menu.classList.toggle('what');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
