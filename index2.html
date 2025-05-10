@@ -238,6 +238,49 @@
       box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
       transition: all 0.3s ease;
     }
+
+    .events {
+      padding: 40px 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); /* Same as homepage */
+      color: rgb(125, 123, 123);
+      border-radius: 10px;
+      margin: 20px auto;
+      max-width: 1200px;
+    }
+
+    .events h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #00ffe7;
+    }
+
+    .events-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0 auto;
+    }
+
+    .events-table th,
+    .events-table td {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 10px 15px;
+      text-align: center;
+    }
+
+    .events-table th {
+      background: rgba(255, 255, 255, 0.1);
+      color: #00ffe7;
+      font-weight: bold;
+    }
+
+    .events-table tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .events-table tr:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
   </style>
 </head>
 <body>
@@ -268,7 +311,7 @@
       <p>Showcase your skills and compete with the best minds.</p>
     </div>
     <div class="card">
-      <h3>Tech Talks</h3>
+      <h3>Tech Tlaks</h3>
       <p>Learn from industry leaders and alumni shaping the future.</p>
     </div>
     <div class="card">
@@ -331,6 +374,51 @@
         <li>Phone: +91-9876543210</li>
         <li>Address: JSS Academy of Technical Education, Noida</li>
     </ul>
+  </section>
+
+  <section class="events">
+    <h2>Upcoming Events</h2>
+    <table class="events-table">
+      <thead>
+        <tr>
+          <th>Event Name</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Location</th>
+          <th>Desciription</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Hackathon 2025</td>
+          <td>May 15, 2025</td>
+          <td>10:00 AM</td>
+          <td>Auditorium</td>
+          <td>A 24-hour coding competition.</td>
+        </tr>
+        <tr>
+          <td>Workshop on AI</td>
+          <td>June 10, 2025</td>
+          <td>2:00 PM</td>
+          <td>Lab 3</td>
+          <td>Learn the basics of Artificial Intelligence.</td>
+        </tr>
+        <tr>
+          <td>Guest Lecture</td>
+          <td>July 5, 2025</td>
+          <td>11:00 AM</td>
+          <td>Seminar Hall</td>
+          <td>Insights from industry experts.</td>
+        </tr>
+        <tr>
+          <td>Annual Tech Fest</td>
+          <td>August 20, 2025</td>
+          <td></td>
+          <td>Main Ground</td>
+          <td>A showcase of innovative projects.</td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 
   <div style="text-align:center; margin: 30px;">
