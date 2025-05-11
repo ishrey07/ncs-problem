@@ -176,7 +176,6 @@
       text-decoration: underline;
     }
 
-    /* Navbar Styles */
     .navbar {
       display: flex;
       justify-content: space-between;
@@ -281,7 +280,11 @@
     .events-table tr:hover {
       background: rgba(255, 255, 255, 0.1);
     }
-  </style>
+    .events-table tr.no-hover:hover {/*here*/
+      background: none;
+      transform: scale(23);
+    }
+  </style>  
 </head>
 <body>
   <header>
@@ -297,7 +300,17 @@
   </header>
   <header>
     <h1 id="main-heading">NCS</h1>
-    <p class="tagline">Tech Society of JSS Academy of Technical Education, Noida</p>
+    <p class="tagline">Tech Society of JSS Acadamy of Technical Education, Noida</p>
+    <div style="position: absolute; top: 20px; left: 20px;">
+      <label for="language-selector" style="color: white; font-size: 1rem;">Select Language:</label>
+      <select id="language-selector" style="padding: 5px; border-radius: 5px; border: 1px solid #00ffe7;">
+        <option value="en">English</option>
+        <option value="hi">Hindi</option>
+        <option value="hi">jsbeuedhed</option>
+        <option value="es">Spanish</option>
+        <option value="fr">French</option>
+      </select>
+    </div>
   </header>
   <img src="https://via.placeholder.com/400x300.png?text=Tech+Society" alt="Tech Image" class="image">
 
@@ -385,7 +398,7 @@
           <th>Date</th>
           <th>Time</th>
           <th>Location</th>
-          <th>Desciription</th>
+          <th>Description</th>
         </tr>
       </thead>
       <tbody>
@@ -396,7 +409,7 @@
           <td>Auditorium</td>
           <td>A 24-hour coding competition.</td>
         </tr>
-        <tr>
+        <tr class="no-hover">
           <td>Workshop on AI</td>
           <td>June 10, 2025</td>
           <td>2:00 PM</td>
